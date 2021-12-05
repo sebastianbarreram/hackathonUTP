@@ -19,6 +19,7 @@ app.use(cors({ origen: '*' }))
 
 //Rutas
 app.use('/user', require('./routes/User.route'))
+app.use('/producto', require('./routes/Producto.route'))
 
 
 //Puerto

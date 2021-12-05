@@ -5,13 +5,15 @@ const jwt = require('jsonwebtoken')
 
 
 UserCtrl.crearUsuario = async (req, res) => {
-    const { nombre, apellido, correo, contrasena, administrador } = req.body
+    const { nombre, apellido, correo, ciudad, tecnica, contrasena, tipo } = req.body
     const NuevoUsuario = new User({
         nombre,
         apellido,
         correo,
+        ciudad,
+        tecnica,
         contrasena,
-        administrador
+        tipo
     })
     const correousuario = await User.findOne({ correo: correo })
     if (correousuario) {
@@ -28,6 +30,7 @@ UserCtrl.crearUsuario = async (req, res) => {
             id: NuevoUsuario._id,
             nombre: NuevoUsuario.nombre,
             apellido: NuevoUsuario.apellido,
+            tipo: NuevoUsuario.tipo,
             token
         })
 
@@ -37,9 +40,9 @@ UserCtrl.crearUsuario = async (req, res) => {
 
 UserCtrl.login = async (req, res) => {
 
-    const { correo, contrasena } = req.body
+    const {correo, contrasena} = req.body
 
-    const usuario = await User.findOne({ correo: correo })
+    const usuario = await User.findOne({correo: correo})
 
     if (!usuario) {
 
@@ -63,7 +66,7 @@ UserCtrl.login = async (req, res) => {
             mensaje: 'Bienvenido',
             id: usuario.id,
             nombre: usuario.nombre,
-            administrador: usuario.administrador,
+            tipo: usuario.tipo,
             token
         })
 

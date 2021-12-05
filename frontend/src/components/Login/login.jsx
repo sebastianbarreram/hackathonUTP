@@ -1,11 +1,11 @@
-
-import React, { useState } from 'react'
+import React from 'react'
+import {useState} from 'react'
 // import Axios from 'axios'
 // import Swal from 'sweetalert2'
 // import { Link } from 'react-router-dom';
 
 
-export default function Login() {
+function Login() {
 
     const [correo, setCorreo] = useState('')
     const [contrasena, setContrasena] = useState('')
@@ -49,7 +49,6 @@ export default function Login() {
     // }
 
     return (
-
         <div className="container mt-4">
             <div className="row">
 
@@ -72,8 +71,6 @@ export default function Login() {
                                         autoFocus
                                         required
                                         onChange={(e) => setCorreo(e.target.value)}
-
-
                                     />
                                 </div>
                                 <div className="form-group">
@@ -84,29 +81,17 @@ export default function Login() {
 
                                         required
                                         onChange={(e) => setContrasena(e.target.value)}
-
-
                                     />
                                 </div>
-
                                 <input type="submit" value="INICIAR SESIÓN" className="btn btn-primary btn-block" />
                                 {/* <Link className="form-group" to="/registrar">¿Aún no tienes un usuario? Regístrate aquí</Link> */}
                             </form>
-
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-
             </div>
-
         </div>
-
-
-
     )
 }
+
+export default Login

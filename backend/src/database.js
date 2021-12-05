@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const uri = "mongodb://localhost:27017/hackathon";
+const uri = "mongodb://localhost:27017/artesano";
 
 // const uri = "mongodb+srv://equipo2p22:equipo2p22@ciclo4-misiontic2022.aqrk4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 

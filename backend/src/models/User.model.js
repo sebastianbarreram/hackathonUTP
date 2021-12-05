@@ -11,15 +11,19 @@ var userSchema = new schema({
     correo: {
         type: String
     },
+    ciudad: {
+        type: String
+    },
+    tecnica: {
+        type: String
+    },
     contrasena:{
         type: String
     },
-    administrador:{
-        type: Boolean,
-        default: false
+    tipo:{
+        type: String
     }
-},{
-    collection: 'Users'
+// },{
+//     collection: 'Users'
 });
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('user', userSchema);

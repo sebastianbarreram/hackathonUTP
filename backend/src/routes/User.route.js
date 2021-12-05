@@ -11,5 +11,4 @@ router.put('/actualizar/:id', UserCtrl.actualizar)
 router.get('/buscar/:nombre', UserCtrl.buscarUsuario)
 
 
-
 module.exports = router
