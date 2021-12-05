@@ -5,6 +5,7 @@ import Login from './components/Login/login';
 //import Home from './components/Home/Home'
 import Navbar from './components/Home/navbar'
 import Footer from "./components/Home/footer";
+import Registro from "./components/Login/Registro";
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
     <div className="App">
       <Navbar/>
       <Router>
-        <Route path="/login" exact component ={Login} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/registro" exact component={Registro} />
       </Router>
       <Footer/>
     </div>

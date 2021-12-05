@@ -6,13 +6,13 @@ import Logo from "../../assets/CraftCol_fwhite.png";
 
 function NavBar() {
 
-  const [show, setShow]= useState(true)
-  useEffect(() =>{
+  const [menu,setMenu]=useState(false)
+  useEffect(() => {
+    if(sessionStorage.getItem('token')){
+      setMenu(true)
 
-    if (sessionStorage.getItem('token')){
-      setShow(false)
     }
-
+ 
   }, [])
   const [hide, setHide]= useState(false)
   useEffect(() =>{
@@ -51,15 +51,28 @@ function NavBar() {
             
         </form>
         </Container>
+        
+        
+         
         <Container>
+          
           <Nav className="justify-content-center ">
           <Nav.Link href="/">Inicio</Nav.Link>
           <Nav.Link href="/catalogo">Catalogo</Nav.Link>
           <Nav.Link href="/contacto">Contacto</Nav.Link>
           <Nav.Link href="/conocenos">Conocenos</Nav.Link>
-          <Nav.Link href="/login" className='d-flex flex-row-reverse justify-content-center fas fa-user mt-1'> <span hidden={hide}  className="  me-2 align-items-end" style={{fontFamily:"cursive"}}> Ingresar </span> </Nav.Link>
+          <Nav.Link href="/login" className='d-flex flex-row-reverse justify-content-center fas fa-user mt-1'> <span hidden={hide}  className="  me-2 align-items-end" style={{fontFamily:"cursive"}}> Ingresar </span></Nav.Link>
+
+          <Nav.Link href="/conocenos" className="fas fa-user mt-1">{' '+sessionStorage.getItem('nombre')}</Nav.Link>
+          <Nav.Link href="/catalogo">Mis productos</Nav.Link>
+          <Nav.Link onClick={()=>salir()} href="/login"className='fas fa-sign-out-alt mt-1'> Salir</Nav.Link>
+        
+         
           </Nav>
-        </Container>         
+          
+        </Container>  
+
+               
       </Navbar.Collapse>
     </Container>
   </Navbar>

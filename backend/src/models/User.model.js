@@ -21,7 +21,8 @@ var userSchema = new schema({
         type: String
     },
     tipo:{
-        type: String
+        type: String,
+        default: 'A'
     }
 // },{
 //     collection: 'Users'
