@@ -34,52 +34,78 @@ function Copyright(props) {
 
 function Login() {
     const [correo, setCorreo] = useState('')
-    const [password, setPassword] = useState('')
-  
-    const HandleSubmit = async (event) => {
-  
-      event.preventDefault();
-      const user = { correo, password }
-      const res = await Axios.post('/usuario/login', user);
-      console.log(res);
-      console.log(res.data.usuario.nombre);
-      console.log(res.status)
-      console.log(res.data.tokenReturn)
-      console.log(res.data.usuario._id)
-  
-  
-      if (res.status!== 200) {
-  
-              
-        Swal.fire({
-        
+    const [contrasena, setContrasena] = useState('')
+
+    const login=async(e)=>{
+      e.preventDefault();
+      const usuario={correo,contrasena}
+      const respuesta= await Axios.post('/user/login',usuario);
+      console.log(respuesta);
+      const mensaje=respuesta.data.mensaje
+      if(mensaje!=='Bienvenido'){
+
+          Swal.fire({   
           icon: 'error',
-          title: 'Datos no validos',
+          title: mensaje,
           showConfirmButton: false,
           timer: 1500
-          
-        })
-  
-        
-        
-      }else {
-        const token = res.data.tokenReturn
-        const nombre = res.data.usuario.nombre
-        const id = res.data.usuario._id
-  
-        sessionStorage.setItem('token', token)
-        sessionStorage.setItem('nombre', nombre)
-        sessionStorage.setItem('id', id)
-        window.location.href='/homeadmin'
-        
-  
-  
-  
-  
-      
-    };
-  
+          })
+      }else{
+          const token= respuesta.data.token
+          const tipo=respuesta.data.tipo
+          const nombre= respuesta.data.nombre
+          const idusuario=respuesta.data.id
+          sessionStorage.setItem('token',token)
+          sessionStorage.setItem('nombre',nombre)
+          sessionStorage.setItem('idusuario',idusuario)
+          sessionStorage.setItem('tipo',tipo)
+          // window.location.href='/'
+
+          Swal.fire({
+            
+              icon: 'success',
+              title: mensaje,
+              showConfirmButton: false,
+              timer: 1500
+          })
+
+      }
+
   }
+  //   const HandleSubmit = async (event) => {
+  
+  //     event.preventDefault();
+  //     const user = { correo, password }
+  //     const res = await Axios.post('/usuario/login', user);
+  //     console.log(res);
+  //     console.log(res.data.usuario.nombre);
+  //     console.log(res.status)
+  //     console.log(res.data.tokenReturn)
+  //     console.log(res.data.usuario._id)
+  
+  
+  //     if (res.status!== 200) {
+              
+  //       Swal.fire({
+        
+  //         icon: 'error',
+  //         title: 'Datos no validos',
+  //         showConfirmButton: false,
+  //         timer: 1500
+          
+  //       })
+        
+  //     }else {
+  //       const token = res.data.tokenReturn
+  //       const nombre = res.data.usuario.nombre
+  //       const id = res.data.usuario._id
+  
+  //       sessionStorage.setItem('token', token)
+  //       sessionStorage.setItem('nombre', nombre)
+  //       sessionStorage.setItem('id', id)
+  //       window.location.href='/homeadmin' 
+  //   };
+  // }
   
   const theme = createMuiTheme({
     typography: {
@@ -107,7 +133,7 @@ function Login() {
                 <Typography component="h1" variant="h5" >
                   Ingresar
                 </Typography>
-                <Box className="prueba" component="form" onSubmit={HandleSubmit} noValidate sx={{ mt: 1 }} >
+                <Box className="prueba" component="form" onSubmit={login} noValidate sx={{ mt: 1 }} >
                   <TextField
                     margin="normal"
                     required
@@ -129,9 +155,9 @@ function Login() {
                     label="Contraseña"
                     type="password"
                     id="password"
-                    value={password}
+                    value={contrasena}
                     autoComplete="current-password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => setContrasena(e.target.value)}
                   />
                   <FormControlLabel
                     control={<Checkbox value="remember" color="primary" />}
@@ -147,10 +173,10 @@ function Login() {
                   </Button>
                   <p style={{fontFamily:'cursive'}}>¿No te has registrado aún?</p>
                   <Button
-                    type="submit"
                     fullWidth
                     variant="contained"
                     sx={{ mb: 2 }}
+                    href='/registro'
                   >
                     Registrarme
                   </Button>

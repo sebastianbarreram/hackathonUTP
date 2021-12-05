@@ -26,7 +26,7 @@ UserCtrl.crearUsuario = async (req, res) => {
         const token = jwt.sign({ _id: NuevoUsuario._id }, 'Secreta')
         await NuevoUsuario.save()
         res.json({
-            mensaje: 'Bienvenido',
+            mensaje: 'Registro exitoso',
             id: NuevoUsuario._id,
             nombre: NuevoUsuario.nombre,
             apellido: NuevoUsuario.apellido,
