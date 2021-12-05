@@ -5,6 +5,7 @@ import Login from './components/Login/login';
 //import Home from './components/Home/Home'
 import Navbar from './components/Home/navbar'
 import Footer from "./components/Home/footer";
+import Catalogo from "./components/Catalogo/catalogo";
 
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
       <Navbar/>
       <Router>
         <Route path="/login" exact component ={Login} />
+        <Route path="/catalogo" exact component ={Catalogo} />
+
       </Router>
       <Footer/>
     </div>

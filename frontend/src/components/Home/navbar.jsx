@@ -2,6 +2,7 @@ import {React, useState, useEffect} from "react";
 import { Navbar,Container,Nav,Button } from 'react-bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Logo from "../../assets/CraftCol_fwhite.png";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 
 function NavBar() {
@@ -42,15 +43,19 @@ function NavBar() {
           alt="React Bootstrap logo"
         />
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse  id="basic-navbar-nav">
-          <Container style={{maxWidth:"500px"}}>
+      <Nav.Link href="/#!" className="d-flex  flex-row-reverse"><ShoppingCartOutlinedIcon style={{color:"rgb(0,0,0,0.58)"}}/></Nav.Link>
+      <Container style={{maxWidth:"400px"}}>
       <form class="d-flex form-inline my-3">
             <input class="form-control mr-sm-2 " type="search" placeholder="¿Que Artesanía estás buscando?" aria-label="Search"/>
             <Button className="my-sm-0" type="submit" style={{background:"rgb(0,0,0,0.5)", border:"none"}}><i className="fas fa-search"></i></Button>
             
         </form>
+        
         </Container>
+        
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse  id="basic-navbar-nav">
+
         <Container>
           <Nav className="justify-content-center ">
           <Nav.Link href="/">Inicio</Nav.Link>
@@ -62,6 +67,7 @@ function NavBar() {
         </Container>         
       </Navbar.Collapse>
     </Container>
+    
   </Navbar>
   </div>
   );
