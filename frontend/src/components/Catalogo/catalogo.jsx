@@ -44,7 +44,7 @@ const theme = createTheme();
                 <Card
                   sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
-                <a href="/#!">
+                <a href={`/usuario/${card._id}`}>
                   <CardMedia
                     component="img"
                     image={card.imagen}
