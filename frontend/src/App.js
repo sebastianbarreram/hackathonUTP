@@ -7,7 +7,8 @@ import Navbar from './components/Home/navbar'
 import Footer from "./components/Home/footer";
 import Catalogo from "./components/Catalogo/catalogo";
 import Registro from "./components/Login/Registro";
-
+import PrivateRouter from "./Routes/privateRouter.jsx";
+import Ventas from "./private/ventas"
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
       <Router>
         <Route path="/login" exact component ={Login} />
         <Route path="/registro" exact component={Registro} />
+        <PrivateRouter path="/ventas" exact component={Ventas}/>
         <Route path="/catalogo" exact component ={Catalogo} />
-
       </Router>
       <Footer/>
     </div>

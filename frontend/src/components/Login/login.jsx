@@ -30,7 +30,8 @@ function Copyright(props) {
     );
   }
   
-  const theme = createTheme();
+const theme = createTheme();
+<theme/>
 
 function Login() {
     const [correo, setCorreo] = useState('')

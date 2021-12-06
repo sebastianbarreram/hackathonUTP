@@ -58,14 +58,14 @@ function NavBar() {
 
         <Container>
           
-          <Nav className="justify-content-center ">
+          <Nav className="d-flex justify-content-center align-items-center ">
           <Nav.Link href="/">Inicio</Nav.Link>
           <Nav.Link href="/catalogo">Catalogo</Nav.Link>
           <Nav.Link href="/contacto">Contacto</Nav.Link>
           <Nav.Link href="/conocenos">Conocenos</Nav.Link>
-          <Nav.Link href="/login" className='d-flex flex-row-reverse justify-content-center fas fa-user mt-1'> <span hidden={hide}  className="  me-2 align-items-end" style={{fontFamily:"cursive"}}> Ingresar </span></Nav.Link>
+          <Nav.Link hidden={hide} href="/login" className=' fas fa-user mt-1'> Ingresar</Nav.Link>
           <Nav.Link hidden={menu} href="/ventas">Vender</Nav.Link>
-          <Nav.Link hidden={menu} href="/conocenos" className="fas fa-user mt-1">{' '+sessionStorage.getItem('nombre')}</Nav.Link>
+          <Nav.Link hidden={menu} href="/perfil" className="fas fa-user mt-1">{' '+sessionStorage.getItem('nombre')}</Nav.Link>
           <Nav.Link hidden={menu} onClick={()=>salir()} href="/login"className='fas fa-sign-out-alt mt-1'> Salir</Nav.Link>
         
          
