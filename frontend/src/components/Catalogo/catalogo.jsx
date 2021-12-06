@@ -30,7 +30,7 @@ function Catalogo(){
 
 }
 const theme = createTheme();
-const prueba=[1,2,3]
+const prueba=[1,2,3,1,1,1,1]
     return(
 <div className="container mt-5" >
     <ThemeProvider theme={theme}>
