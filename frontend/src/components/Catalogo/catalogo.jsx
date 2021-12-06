@@ -45,14 +45,12 @@ const prueba=[1,2,3,1,1,1,1]
                 <Card
                   sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
-<a href="/#!">
+                <a href="/#!">
                   <CardMedia
                     component="img"
                     image={imgPrueba}
                     alt="random"
                     style={{height:"250px"}}
-                    
-                    
                   />
                </a>   
                   <CardContent sx={{ flexGrow: 1 }}>

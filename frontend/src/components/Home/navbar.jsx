@@ -7,10 +7,10 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function NavBar() {
 
-  const [show,setShow]=useState(false)
+  const [menu,setMenu]=useState(true)
   useEffect(() => {
     if(sessionStorage.getItem('token')){
-      setShow(true)
+      setMenu(false)
 
     }
  
@@ -64,10 +64,9 @@ function NavBar() {
           <Nav.Link href="/contacto">Contacto</Nav.Link>
           <Nav.Link href="/conocenos">Conocenos</Nav.Link>
           <Nav.Link href="/login" className='d-flex flex-row-reverse justify-content-center fas fa-user mt-1'> <span hidden={hide}  className="  me-2 align-items-end" style={{fontFamily:"cursive"}}> Ingresar </span></Nav.Link>
-
-          <Nav.Link hidden={show} href="/#!" className="fas fa-user mt-1">{' '+sessionStorage.getItem('nombre')}</Nav.Link>
-          {/* <Nav.Link href="/catalogo">Mis productos</Nav.Link> */}
-          <Nav.Link hidden={show} onClick={salir} href="/login"className='fas fa-sign-out-alt mt-1'> Salir</Nav.Link>
+          <Nav.Link hidden={menu} href="/ventas">Vender</Nav.Link>
+          <Nav.Link hidden={menu} href="/conocenos" className="fas fa-user mt-1">{' '+sessionStorage.getItem('nombre')}</Nav.Link>
+          <Nav.Link hidden={menu} onClick={()=>salir()} href="/login"className='fas fa-sign-out-alt mt-1'> Salir</Nav.Link>
         
          
           </Nav>
