@@ -21,7 +21,7 @@ function App() {
         <Route path="/login" exact component ={Login} />
         <Route path="/carrito" exact component ={Carrito} />
         <Route path="/registro" exact component={Registro} />
-        <Route path="/name" exact component={Name} />
+        {/* <Route path="/name" exact component={Name} /> */}
         
         <PrivateRouter path="/ventas" exact component={Ventas}/>
         <Route path="/catalogo" exact component ={Catalogo} />
