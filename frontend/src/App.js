@@ -8,7 +8,8 @@ import Footer from "./components/Home/footer";
 import Catalogo from "./components/Catalogo/catalogo";
 import Registro from "./components/Login/Registro";
 import PrivateRouter from "./Routes/privateRouter.jsx";
-import Ventas from "./private/ventas"
+import Ventas from "./private/Ventas";
+
 
 function App() {
   return (

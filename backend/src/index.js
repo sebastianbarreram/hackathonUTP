@@ -11,9 +11,10 @@ require('./database')
 //Se llama a morgan como desarrollador
 app.use(morgan('dev'))
 
-app.use(express.json()); 
+app.use(express.json({limit: '6mb'}));
 //application/x-www-form-urlencoded para que la db reciba ese tipo de formato
 app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({limit: '6mb'}));
 app.use(cors({ origen: '*' }))
 
 

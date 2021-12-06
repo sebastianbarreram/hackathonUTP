@@ -12,9 +12,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Axios from 'axios'
 
-import imgPrueba from '../../assets/CraftCol.png'
-function Catalogo(){
 
+
+function Catalogo(){
     
   let [tam, setTamSelect] =useState([])
  
@@ -24,13 +24,12 @@ function Catalogo(){
 
   const obtenerProductos = async () => {
 
-    const res = await Axios.get('')
+    const res = await Axios.get('/producto/listar')
     const Productlist = res.data
     setTamSelect(Productlist)
 
 }
 const theme = createTheme();
-const prueba=[1,2,3,1,1,1,1]
     return(
 <div className="container mt-5" >
     <ThemeProvider theme={theme}>
@@ -39,7 +38,7 @@ const prueba=[1,2,3,1,1,1,1]
       <main>      
         <Container sx={{ py: 8 }} maxWidth="md">
           <Grid container spacing={4}>
-            {prueba.map((card) => (
+            {tam.map((card) => (
               
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
@@ -48,19 +47,21 @@ const prueba=[1,2,3,1,1,1,1]
                 <a href="/#!">
                   <CardMedia
                     component="img"
-                    image={imgPrueba}
-                    alt="random"
+                    image={card.imagen}
+                    alt=""
                     style={{height:"250px"}}
                   />
                </a>   
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2" >
-                    Nombre Producto
+                    {card.nombre}
                     </Typography>
-                    <Typography>
-                    Empresa o Artesano
+                    
+                    <Typography>                     
+                    {card.estado}
                       <br/>
-                    Precio
+                      <br/>
+                    {card.precio}
                     </Typography>
                   </CardContent>
                   <CardActions className="d-flex justify-content-center">
