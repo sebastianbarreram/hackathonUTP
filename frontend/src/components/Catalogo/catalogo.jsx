@@ -66,7 +66,7 @@ const theme = createTheme();
                   </CardContent>
                   <CardActions className="d-flex justify-content-center">
                     <Button size="large" href="/#!">Añadir al carrito<ShoppingCartOutlinedIcon /></Button>
-                    
+                    <i class="fab fa-facebook-square"></i>
                   </CardActions>
                 </Card>
               </Grid>
