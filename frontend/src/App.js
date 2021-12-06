@@ -6,6 +6,7 @@ import Login from './components/Login/login';
 import Navbar from './components/Home/navbar'
 import Footer from "./components/Home/footer";
 import Registro from "./components/Login/Registro";
+import Ventas from "./components/Home/Ventas";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Route path="/login" exact component={Login} />
         <Route path="/registro" exact component={Registro} />
+        <Route path="/ventas" exact component={Ventas} />
       </Router>
       <Footer/>
     </div>

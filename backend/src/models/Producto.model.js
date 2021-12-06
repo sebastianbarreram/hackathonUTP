@@ -18,7 +18,8 @@ const ProductoSchema = new Schema({
         type: Number
     },
     estado: {
-        type: String
+        type: String,
+        default: 'disponible'
     },
     artesano: {
         type: String
