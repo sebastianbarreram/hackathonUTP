@@ -1,13 +1,16 @@
 import {BrowserRouter as Router, Route} from "react-router-dom";
-
 import './App.css';
 import Login from './components/Login/login';
 //import Home from './components/Home/Home'
 import Navbar from './components/Home/navbar'
 import Footer from "./components/Home/footer";
+import Catalogo from "./components/Catalogo/catalogo";
 import Registro from "./components/Login/Registro";
-import Ventas from "./components/Home/Ventas";
+// import Ventas from "./components/Home/Ventas";
 import Name from "./components/Home/Name";
+import PrivateRouter from "./Routes/privateRouter.jsx";
+import Ventas from "./private/ventas";
+import Detalles from "./components/Catalogo/Detalles";
 
 
 function App() {
@@ -15,11 +18,18 @@ function App() {
     <div className="App">
       <Navbar/>
       <Router>
-        <Route path="/login" exact component={Login} />
+        <Route path="/login" exact component ={Login} />
         <Route path="/registro" exact component={Registro} />
-        <Route path="/ventas" exact component={Ventas} />
+        {/* <Route path="/ventas" exact component={Ventas} /> */}
         <Route path="/name" exact component={Name} />
         
+        <PrivateRouter path="/ventas" exact component={Ventas}/>
+        <Route path="/catalogo" exact component ={Catalogo} />
+
+        <Route path="/usuario/:id">
+          <Detalles />
+
+        </Route>
       </Router>
       <Footer/>
     </div>

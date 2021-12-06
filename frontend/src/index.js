@@ -4,12 +4,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { style } from '@mui/system';
+
 
 Axios.defaults.baseURL='http://localhost:4000';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

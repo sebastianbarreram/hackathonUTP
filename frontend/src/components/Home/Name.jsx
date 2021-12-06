@@ -56,7 +56,7 @@ function Name() {
                            <thead className='thead-dark'>
                                <tr>
                                <th scope="col">#</th>
-                               <th scope="col">EVALUACION</th>
+                               <th scope="col">Artesano</th>
                                {/* <th scope="col">ESTUDIANTE</th> */}
                                <th scope="col">NOTA</th>
                                </tr>
