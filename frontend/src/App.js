@@ -9,7 +9,7 @@ import Catalogo from "./components/Catalogo/catalogo";
 import Registro from "./components/Login/Registro";
 import PrivateRouter from "./Routes/privateRouter.jsx";
 import Ventas from "./private/Ventas";
-
+import Carrito from "./components/Carrito/carrito";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
       <Navbar/>
       <Router>
         <Route path="/login" exact component ={Login} />
+        <Route path="/carrito" exact component ={Carrito} />
         <Route path="/registro" exact component={Registro} />
         <PrivateRouter path="/ventas" exact component={Ventas}/>
         <Route path="/catalogo" exact component ={Catalogo} />

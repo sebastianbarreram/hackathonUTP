@@ -43,7 +43,7 @@ function NavBar() {
           alt="React Bootstrap logo"
         />
       </Navbar.Brand>
-      <Nav.Link href="/#!" className="d-flex  flex-row-reverse"><ShoppingCartOutlinedIcon style={{color:"rgb(0,0,0,0.58)"}}/></Nav.Link>
+      <Nav.Link href="/carrito" className="d-flex  flex-row-reverse"><ShoppingCartOutlinedIcon style={{color:"rgb(0,0,0,0.58)"}}/></Nav.Link>
       <Container style={{maxWidth:"400px"}}>
       <form class="d-flex form-inline my-3">
             <input class="form-control mr-sm-2 " type="search" placeholder="¿Que Artesanía estás buscando?" aria-label="Search"/>
