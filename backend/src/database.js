@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const uri = "mongodb://localhost:27017/artesano";
+// const uri = "mongodb://localhost:27017/artesano";
 
-// const uri = "mongodb+srv://equipo2p22:equipo2p22@ciclo4-misiontic2022.aqrk4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://mateo:mateo@cluster0.yciz1.mongodb.net/artesano?retryWrites=true&w=majority";
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 

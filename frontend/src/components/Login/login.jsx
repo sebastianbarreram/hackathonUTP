@@ -59,7 +59,7 @@ function Login() {
           sessionStorage.setItem('nombre',nombre)
           sessionStorage.setItem('idusuario',idusuario)
           sessionStorage.setItem('tipo',tipo)
-          // window.location.href='/'
+          window.location.href='/'
 
           Swal.fire({
             
